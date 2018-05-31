@@ -1,9 +1,9 @@
 puts "We want to find all the leap years between a given date range."
 puts "Please enter a start date: "
-start_date = 1500
+start_date = gets.chomp
 start_date.to_int
 puts "Please enter an end date:"
-end_date = 2004
+end_date = gets.chomp
 end_date.to_int
 
 for i in start_date..end_date do
