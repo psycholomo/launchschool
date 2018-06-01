@@ -1,0 +1,1 @@
+# sort an array of words alphabetically, ignore upper case and lower case
