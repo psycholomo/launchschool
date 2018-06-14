@@ -4,7 +4,7 @@
 array_of_birthdays = File.read('birthdays.txt').split(",").map(&:strip)
 
 
-puts array_of_birthdays
+#puts array_of_birthdays
 
 puts "Please enter a name from the imported file and I will provide you their birthday"
   name = gets.chomp
