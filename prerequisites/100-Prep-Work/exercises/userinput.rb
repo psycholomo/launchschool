@@ -98,14 +98,14 @@ puts "Invalid input. Only integers are allowed."
 end
 end
 
-=end
+
 
 #launch school printer (p2)
 
 
 
  while true
-puts "How many output lines do you want? Enter a number >=3 (Q to quit)"
+puts "How many output lines do you want? Enter a number >=3 (Q or q to quit)"
 number_of_lines = gets.chomp
 
 
@@ -127,3 +127,52 @@ else
 end
 
 end
+=end
+
+
+#opposites attract
+def valid_number?(number_string)
+  number_string.to_i.to_s == number_string && number_string.to_i != 0
+end
+
+
+
+number_1 = nil
+number_2 = nil
+
+while true
+
+loop do 
+  puts "Please enter a positive or negative integer for number 1: "
+  enter_number = gets.chomp
+  if valid_number?(enter_number)
+      number_1 = enter_number.to_i
+    break
+  else
+  puts "Invalid input. Only non-zero integers are allowed"
+end
+end
+
+loop do 
+  puts "Please enter a positive or negative integer for number 2: "
+  enter_number = gets.chomp
+  if valid_number?(enter_number)
+      number_2 = enter_number.to_i
+    break
+  else
+  puts "Invalid input. Only non-zero integers are allowed"
+end
+end
+
+if number_1 * number_2 > 0
+  puts "Sorry one integer must be positive, one must be negative. Please start over"
+  number_1 = nil
+  number_2 = nil
+  next
+else
+  puts "#{number_1} * #{number_2} = #{number_1 * number_2} "
+  exit
+end
+
+end
+
