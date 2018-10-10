@@ -3,18 +3,23 @@
 # perform the operation on the two numbers
 # output the result
 
-def prompt(message)
-	Kernel.puts("=> #{message}")
+  def prompt(message)
+    Kernel.puts("=> #{message}")
 
-end
+  end
 
 
 def valid_number?(num)
-  num.to_i() != 0
+  num.to_i().to_s == num
+end
+
+def valid_float?(num)
+  num.to_f.to_s == num
+
 end
 
 def operation_to_message(op)
-  case op
+  word = case op
   when '1'
     "Adding"
 
@@ -27,6 +32,14 @@ def operation_to_message(op)
   when '4'
     "dividing"
   end
+
+  x = 'this is just a test'
+
+  word
+end
+
+def number?(input)
+  valid_number?(input) ||  valid_float?(input)
 end
 
 
