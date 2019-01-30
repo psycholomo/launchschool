@@ -1,12 +1,21 @@
+require 'yaml'
+MESSAGES = YAML.load_file('prompt.yml')
 #ask the user for two numbers
 #ask the user for an operation to perform
 # perform the operation on the two numbers
 # output the result
 
-  def prompt(message)
-    Kernel.puts("=> #{message}")
+puts MESSAGES.inspect
 
-  end
+def prompt(message)
+  Kernel.puts("=> #{message}")
+
+end
+
+def messages(message, lang='en')
+  MESSAGES[lang][message]
+
+end
 
 
 def valid_number?(num)
@@ -35,7 +44,7 @@ def operation_to_message(op)
 
   x = 'this is just a test'
 
-  word
+  return word
 end
 
 def number?(input)
@@ -43,20 +52,18 @@ def number?(input)
 end
 
 
-
-prompt("Welcome to Calculator!")
-
+LANGUAGE = 'en'
 number1 = ''
 number2 = ''
 
-prompt("=> Welcome to calculator! Enter your name:")
+prompt(messages('welcome',LANGUAGE))
 
 name = ''
 loop do 
   name = Kernel.gets().chomp()
 
   if name.empty?()
-    prompt("Make sure to use a valid name.")
+    prompt(MESSAGES['valid_name'])
   else
     break
   end
@@ -67,14 +74,14 @@ loop do # main loop
 
 
   loop do 
-    prompt("=> Whats the first number?")
+    prompt(MESSAGES['first_number'])
     number1 = Kernel.gets().chomp()
 
     if valid_number?(number1)
       break
 
     else
-      prompt("Hmm.. that doesnt look like a valid number")
+      prompt(MESSAGES['is_it_valid'])
     end
 
   end
