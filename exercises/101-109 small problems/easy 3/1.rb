@@ -36,8 +36,5 @@ get_six_numbers
 if find_number(@array_of_numbers)
   puts("The number #{@array_of_numbers[-1]} appears in #{@array_of_numbers}")
 else
-  puts puts("The number #{@array_of_numbers[-1]} does not appear in #{@array_of_numbers}")
+  puts("The number #{@array_of_numbers[-1]} does not appear in #{@array_of_numbers}")
 end
-
-
-#print array_of_numbers
