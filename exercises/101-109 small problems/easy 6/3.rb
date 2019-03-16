@@ -6,18 +6,38 @@
 
 #Write a method that calculates and returns the index of the first Fibonacci number that has the number of digits specified as an argument. (The first Fibonacci number has index 1.)
 
-def find_fibonacci_index_by_length(number)
+def find_fibonacci_index_by_length(end_digit)
+  incrementer = 0
 
+  array_of_digits = [1,1]
+
+  loop do 
+
+    break if array_of_digits[-1].to_s.length >= end_digit
+
+     array_of_digits << array_of_digits[incrementer] + array_of_digits[incrementer + 1]
+     
+     incrementer += 1
+    
+  end
+array_of_digits.length
 end
 
 
 
-find_fibonacci_index_by_length(2) == 7          # 1 1 2 3 5 8 13
-find_fibonacci_index_by_length(3) == 12         # 1 1 2 3 5 8 13 21 34 55 89 144
-find_fibonacci_index_by_length(10) == 45
-find_fibonacci_index_by_length(100) == 476
-find_fibonacci_index_by_length(1000) == 4782
-find_fibonacci_index_by_length(10000) == 47847
+p find_fibonacci_index_by_length(2) == 7          # 1 1 2 3 5 8 13
+p find_fibonacci_index_by_length(3) == 12         # 1 1 2 3 5 8 13 21 34 55 89 144
+p find_fibonacci_index_by_length(10) == 45
+#find_fibonacci_index_by_length(100) == 476
+#find_fibonacci_index_by_length(1000) == 4782
+p find_fibonacci_index_by_length(10000) == 47847
 
 
-puts 10 * 10 * 10 * 10
+
+#find the number of digits. for example (2 ) is 10, 3 is 10x 10 4 is 10 x 10 x 10 5 is 10 x 10 x 10 x 10
+#calculate each number into the fibbocai seuquence
+# if the number is the array has more digits then what was passed in.. break.
+# else continue calculating the fibonacci sequence
+
+ #p fibonacci_seq(3)
+ #p fibonacci_seq(2)
