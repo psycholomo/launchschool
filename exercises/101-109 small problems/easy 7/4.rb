@@ -12,7 +12,7 @@ up_case = ('A'..'Z').to_a
     elsif up_case.include?(char)
       new_array << char.downcase
     else
-      new_array << " "
+      new_array << char
       
     end
   end
@@ -20,6 +20,8 @@ up_case = ('A'..'Z').to_a
 end
 
 swapcase('CamelCase') == 'cAMELcASE'
-swapcase('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'
+p swapcase('Tonight on XYZ-TV') == 'tONIGHT ON xyz-tv'
 
 p swapcase('Tonight on XYZ-TV')
+
+
