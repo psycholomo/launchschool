@@ -9,14 +9,15 @@
 
 
 def palindromes(string)
-  placeholder = string.reverse
-  #p substrings(placeholder)
-  p substrings(string)
+
+  new_array = []
   
-  if substrings(placeholder) == substrings(string)
-   return true
-  else return false
+  substrings(string).each do |char|
+    if char == char.reverse && char.size > 1
+      new_array << char
+    end
   end
+  new_array
 end
 
 def substrings(string)
@@ -36,17 +37,17 @@ def substrings(string)
 end
 
 
-# palindromes('abcd') == []
-# palindromes('madam') == ['madam', 'ada']
-# palindromes('hello-madam-did-madam-goodbye') == [
-#   'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
-#   'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
-#   '-madam-', 'madam', 'ada', 'oo'
-# ]
-# palindromes('knitting cassettes') == [
-#   'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
-# ]
+palindromes('abcd') == []
+palindromes('madam') == ['madam', 'ada']
+p palindromes('hello-madam-did-madam-goodbye') == [
+  'll', '-madam-', '-madam-did-madam-', 'madam', 'madam-did-madam', 'ada',
+  'adam-did-mada', 'dam-did-mad', 'am-did-ma', 'm-did-m', '-did-', 'did',
+  '-madam-', 'madam', 'ada', 'oo'
+]
+palindromes('knitting cassettes') == [
+  'nittin', 'itti', 'tt', 'ss', 'settes', 'ette', 'tt'
+]
 
 
 #substrings('abcd')
- palindromes('madam')
+palindromes('madam')
