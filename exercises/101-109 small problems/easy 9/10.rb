@@ -20,10 +20,3 @@ p buy_fruit([["apples", 3], ["orange", 1], ["bananas", 2]]) #==
 
 
 
-
-
-
-
-arr = [1,2,3,4]
-
-p arr[-1] == arr.last
