@@ -1,18 +1,18 @@
 
-def minilang(stack)
+def minilang(string)
   register = 0
-  current_stack = stack.split(" ")
-  number = nil
+  stack = []
+  current_stack = string.split(" ")
 
   current_stack.each do |word|
     case word
-    when "PUSH" then current_stack.push(number)
-    when "ADD" then puts "add"
-    when "SUB" then puts "sub"
-    when "MULT" then puts "mult"
-    when "DIV" then puts "div"
-    when "MOD" then puts "mod"
-    when "POP" then puts "pop"
+    when "PUSH" then stack.push(register)
+    when "ADD" then register += stack.pop
+    when "SUB" then register -= stack.pop
+    when "MULT" then register *= stack.pop
+    when "DIV" then register = register / stack.pop
+    when "MOD" then register = register % stack.pop
+    when "POP" then stack.pop
     when "PRINT" then puts register
     else register = word.to_i
     end
@@ -37,36 +37,36 @@ def is_number?(string)
 end
 
 
-minilang('PRINT')
+#minilang('PRINT')
 # 0
 
-minilang('5 PUSH 3 MULT PRINT')
-# 15
+ minilang('5 PUSH 3 MULT PRINT')
+# # 15
 
-minilang('5 PRINT PUSH 3 PRINT ADD PRINT')
-# 5
-# 3
-# 8
+ minilang('5 PRINT PUSH 3 PRINT ADD PRINT')
+# # 5
+# # 3
+# # 8
 
-minilang('5 PUSH POP PRINT')
-# 5
+# minilang('5 PUSH POP PRINT')
+# # 5
 
-minilang('3 PUSH 4 PUSH 5 PUSH PRINT ADD PRINT POP PRINT ADD PRINT')
-# 5
-# 10
-# 4
-# 7
+# minilang('3 PUSH 4 PUSH 5 PUSH PRINT ADD PRINT POP PRINT ADD PRINT')
+# # 5
+# # 10
+# # 4
+# # 7
 
-minilang('3 PUSH PUSH 7 DIV MULT PRINT ')
-# 6
+# minilang('3 PUSH PUSH 7 DIV MULT PRINT ')
+# # 6
 
-minilang('4 PUSH PUSH 7 MOD MULT PRINT ')
-# 12
+# minilang('4 PUSH PUSH 7 MOD MULT PRINT ')
+# # 12
 
-minilang('-3 PUSH 5 SUB PRINT')
-# 8
+# minilang('-3 PUSH 5 SUB PRINT')
+# # 8
 
-minilang('6 PUSH')
-# (nothing printed; no PRINT commands)
+# minilang('6 PUSH')
+# # (nothing printed; no PRINT commands)
 
-p minilang('6 push')
+# p minilang('6 push')
