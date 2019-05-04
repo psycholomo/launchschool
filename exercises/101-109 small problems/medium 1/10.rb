@@ -26,3 +26,22 @@ fibonacci_last(15)        # -> 0  (the 15th Fibonacci number is 610)
 
 
 p fibonacci_last(100) == 5
+
+
+# def fibonacci_first_60
+# first_60 = [0, 1, 1]
+#   f1 = 0
+#   f2 = 1
+#   f3 = 1
+#   57.times do |i|
+#     f1 = f2
+#     f2 = f3
+#     f3 = (f2 + f1) % 10
+#     first_60.push(f3)
+#   end
+#   first_60
+# end
+
+# def fibonacci_last(num)
+#   fibonacci_first_60[(num % 60)]
+# end
