@@ -1,3 +1,0 @@
-# Write a method that will return a substring based on specified indices
-
-#example: substring("honey", 0, 2) => "hon"
