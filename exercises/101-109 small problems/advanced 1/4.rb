@@ -1,14 +1,14 @@
 
-#rules
+# rules
 # matrix needs to have equal row length values for each sub_array
 # the return value will be a nested array with the rows and columns switched
 # needs to be atleast 1 row and 1 column to work
-#algorithm 
+# algorithm 
 # Need to dynamically shift the matrix with columns and rows by using the rows length and columns length
 # the rows are the length of the the matrix for each index
 # the columns are the length of one of the inner arrays
 
-#pseudocode
+# pseudocode
 # initalize a variable called return_matrix and set it to an empty array
 # set the columns to be the length of the matrix. I.E. if we have 4 inner arrays the column is length of 4
 # Iterate through the columns one by one for each index of the arrays. This means we want from index 0 to the length of the columns that were

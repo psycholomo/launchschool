@@ -1,15 +1,15 @@
-#rules
+# #rules
 # not allowed to sort after the merge. Sort this manually when merging
 # the two input arrays as parameters are pre-sorted before being merged
 # Not allowed to remove elements from the original arrays or modify the original array
 # atleast 1 array has elements in it. The other can be empty
 
-#algorithm
+# #algorithm
 # for each number in both arrays compare the first element in each array. If one is less then the other then push the one that is less and move it out of position 0.
 # as long as each element has something to compare keep iterating and popping the elements
 # once there is only elements in one array. Push the remainder of that element into the new array
 
-#pseudo code
+# #pseudo code
 # clone array one that is passed in as a parameter and set it to the variable new_arr1
 # clone array two that is passed in as a parameter and set it to the variable new_arr2
 # intiralize an empty array called return_array and set it to an empty array

@@ -1,6 +1,6 @@
 #Transpose 3x3
 
-#pseudo code
+# pseudo code
 # Initalize an empty array for our return array. Give it the name of return array
 # We want to use the index to represent the actual value in the row and then use a number to indiciate each array in the matrix.
 # Iterate through matrix with each_with_index passing it each array and the value of the index

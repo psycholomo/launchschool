@@ -1,8 +1,8 @@
-#rules
-#matrix needs to have equal row length values for each sub_array
+# rules
+# matrix needs to have equal row length values for each sub_array
 # the return value will be a nested array with the rows and columns switched
 # needs to be atleast 1 row and 1 column to work
-#algorithm 
+# algorithm 
 # Need to dynamically shift the matrix with columns and rows by using the rows length and columns length
 # the rows are the length of the the matrix for each index
 # the columns are the length of one of the inner arrays
@@ -11,17 +11,17 @@
 #   [1, 5, 8],
 #   [4, 7, 2],
 #   [3, 9, 6]  it equals 
-#   
+  
 #   [[1, 4, 3], 
 #   [5, 7, 9], 
 #   [8, 2, 6]] 
 # ]
 # if we want this to rotate by 90 degrees notice that we only have to flip each inner array in reverse to get the rotation of 90 degrees after it has been transposed.
 
-#psuedo code
+# psuedo code
 
-#Define  a method called reverse with a parameter that receives a matrix
-#iterate through each sub array in the matrix using the map method.
+# Define  a method called reverse with a parameter that receives a matrix
+# iterate through each sub array in the matrix using the map method.
 #  - Return the reverse of each individual array and then return the full matrix as the return value of map
 
 
