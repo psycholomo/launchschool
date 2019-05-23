@@ -1,44 +1,93 @@
-#Transpose 3x3
- 
-def transpose(matrix)
-  
-  changed_matrix = matrix.clone
-  org_col_zero = matrix[0]
-  org_col_one = matrix[1]
-  org_col_two = matrix[2]
+# rules
+# must be an odd number greater then 7
+# must be a positive integer
 
-  changed_matrix.each_with_index do |arr, ind|
-    case ind
-    when 0
-      then changed_matrix[ind] = [org_col_zero[0], org_col_one[0], org_col_two[0]]
-    when 1
-      then changed_matrix[ind] = [org_col_zero[1], org_col_one[1], org_col_two[1]]
-    when 2
-      then changed_matrix[ind] = [org_col_zero[2], org_col_one[2], org_col_two[2]]
-    end
+# psuedocode
+# define a method called star and pass it in a number greater then 7. The number must be odd
+# return string of "error" if the number is not greater or equal to 7 and the number is not odd
+
+# Initialize a variable "middle" find the middle of the star by dividing the number (which is the length of the star)  by 2
+# initialize a counter to help us find the number of starting spaces, before we print a star Initiliaze it to 0
+# intialize a seperate counter for the middle so that we can find how many spaces between each star need to be printed. Call this middle_counter
+# Iterate
+#     - while counter is less then the middle
+#     - subtract the middle counter by 1
+#     - then print out each line for the first top of the star. This is achieved by printing a spaces multipled by the counter, followed by a star
+#       - Then print out the space multipled by the middle counter, followed by a star, 
+#       - then multiply the space by the middle counter followed by the third star.
+#     - increment the counter by 1
+# when the counter is greater then the middle. Break the loop
+
+# print out the middle my multiplying "*" by num
+
+# next find the bottom of the star 
+# re-assign the counter to 0
+# re-assign the middle counter to equal the middle variable
+# Iterate - flip the counters to make the star in the opposite direction
+# => - while counter is less then the middle
+#     - subtract the middle counter by 1
+#     - then print out each line for the first top of the star. This is achieved by printing a spaces multipled by the middle counter, followed by a star
+#       - Then print out the space multipled by the counter, followed by a star, 
+#       - then multiply the space by the counter followed by the third star.
+#     - increment the counter by 1
+# when the counter is greater then the middle. Break the loop
+# End the program
+
+
+
+
+
+
+
+
+def star(num)
+  return "error" if num < 7 && num.even?
+  middle = num / 2 
+  counter = 0
+  middle_counter = middle
+
+  while counter < middle
+   middle_counter -= 1
+
+     puts("#{' ' * counter}*#{' ' * middle_counter}*#{' ' * middle_counter}*")
+
+    counter += 1
+  end
+  puts "*" * num
+
+  counter = 0
+  middle_counter = middle
+
+  while counter < middle
+   middle_counter -= 1
+
+     puts("#{' ' * middle_counter}*#{' ' * counter}*#{" " * counter}*")
+      #{' ' * middle_counter}*#{' ' * middle_counter}*")
+
+    counter += 1
   end
 end
 
-matrix = [
-  [1, 5, 8],
-  [4, 7, 2],
-  [3, 9, 6]
-]
+# Examples
 
-new_matrix = transpose(matrix)
+#star(7)
 
+# *  *  *
+#  * * *
+#   ***
+# *******
+#   ***
+#  * * *
+# *  *  *
+ star(9)
 
-p new_matrix == [[1, 4, 3], 
-                [5, 7, 9], 
-                [8, 2, 6]]
-p matrix == [[1, 5, 8], [4, 7, 2], [3, 9, 6]]
+# *   *   *
+#  *  *  *
+#   * * *
+#    ***
+# *********
+#    ***
+#   * * *
+#  *  *  *
+# *   *   *
 
-
-#col 1 row 1 = same
-# col 2 row 1 = same
-# col 3 row 1 = column 1 row 3
-
-
-# row 0 column 1, 2 changes
-# row 1 column 0, 2 changes
-# row 2 column 0 1 
