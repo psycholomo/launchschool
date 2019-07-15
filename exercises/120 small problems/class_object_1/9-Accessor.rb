@@ -1,11 +1,11 @@
-Accessor
-Using the code from the previous exercise, replace the getter and setter methods using Ruby shorthand.
+# Accessor
+# Using the code from the previous exercise, replace the getter and setter methods using Ruby shorthand.
 
-Code:
+# Code:
 
 class Cat
-  attr_reader :name
-  attr_writer :name
+  attr_accessor :name
+ 
 
   def initialize(name)
     @name = name
@@ -20,7 +20,7 @@ kitty = Cat.new('Sophie')
 kitty.greet
 kitty.name = 'Luna'
 kitty.greet
-Expected output:
+# Expected output:
 
-Hello! My name is Sophie!
-Hello! My name is Luna!
+# Hello! My name is Sophie!
+# Hello! My name is Luna!

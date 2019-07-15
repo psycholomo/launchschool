@@ -1,7 +1,7 @@
-Writer
-Using the code from the previous exercise, add a setter method named #name. Then, rename kitty to 'Luna' and invoke #greet again.
+# Writer
+# # Using the code from the previous exercise, add a setter method named #name. Then, rename kitty to 'Luna' and invoke #greet again.
 
-Code:
+# Code:
 
 class Cat
   attr_reader :name
@@ -13,11 +13,17 @@ class Cat
   def greet
     puts "Hello! My name is #{name}!"
   end
+
+  def name=(new_name)
+    @name = new_name
+
+  end
 end
 
 kitty = Cat.new('Sophie')
 kitty.greet
-Expected output:
-
-Hello! My name is Sophie!
-Hello! My name is Luna!
+# Expected output:
+kitty.name = "Luna"
+kitty.greet
+# Hello! My name is Sophie!
+# Hello! My name is Luna!
