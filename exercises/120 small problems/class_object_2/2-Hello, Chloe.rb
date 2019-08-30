@@ -1,5 +1,5 @@
-Hello, Chloe!
-Using the following code, add an instance method named #rename that renames kitty when invoked.
+# Hello, Chloe!
+# Using the following code, add an instance method named #rename that renames kitty when invoked.
 
 class Cat
   attr_accessor :name
@@ -7,13 +7,17 @@ class Cat
   def initialize(name)
     @name = name
   end
+
+  def rename(new_name)
+    @name = new_name
+  end
 end
 
 kitty = Cat.new('Sophie')
 kitty.name
 kitty.rename('Chloe')
 kitty.name
-Expected output:
+# Expected output:
 
-Sophie
-Chloe
+# Sophie
+# Chloe
