@@ -1,7 +1,14 @@
-Walk the Cat
-Using the following code, create a module named Walkable that contains a method named #walk. This method should print Let's go for a walk! when invoked. Include Walkable in Cat and invoke #walk on kitty.
+#Walk the Cat
+#Using the following code, create a module named Walkable that contains a method named #walk. This method should print Let's go for a walk! when invoked. Include Walkable in Cat and invoke #walk on kitty.
 
+module Walkable
+  def walk
+    puts "Lets go for a walk"
+
+  end
+end
 class Cat
+  include Walkable
   attr_reader :name
 
   def initialize(name)
@@ -10,12 +17,14 @@ class Cat
 
   def greet
     puts "Hello! My name is #{name}!"
+    walk
   end
 end
 
 kitty = Cat.new('Sophie')
 kitty.greet
-Expected output:
 
-Hello! My name is Sophie!
-Let's go for a walk!
+# Expected output:
+
+# Hello! My name is Sophie!
+# Let's go for a walk!

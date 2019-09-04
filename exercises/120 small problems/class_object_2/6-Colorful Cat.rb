@@ -1,8 +1,21 @@
-Colorful Cat
-Using the following code, create a class named Cat that prints a greeting when #greet is invoked. The greeting should include the name and color of the cat. Use a constant to define the color.
+# Colorful Cat
+# Using the following code, create a class named Cat that prints a greeting when #greet is invoked. The greeting should include the name and color of the cat. Use a constant to define the color.
+
+class Cat
+COLOR = "purple"
+attr_reader :cat_name
+  def initialize(cat_name)
+    @cat_name = cat_name
+    end
+
+    def greet 
+      puts "Hello! My name is #{cat_name} and I'm a #{COLOR} cat!"
+    end
+end
 
 kitty = Cat.new('Sophie')
 kitty.greet
-Expected output:
+# kitty.greet
+# Expected output:
 
-Hello! My name is Sophie and I'm a purple cat!
+# Hello! My name is Sophie and I'm a purple cat!

@@ -1,4 +1,4 @@
-Using the following code, create a class named Vehicle that, upon instantiation, assigns the passed in argument to @year. Both Truck and Car should inherit from Vehicle.
+#Using the following code, create a class named Vehicle that, upon instantiation, assigns the passed in argument to @year. Both Truck and Car should inherit from Vehicle.
 
 module Towable
   def tow
@@ -19,8 +19,8 @@ puts truck1.tow
 
 car1 = Car.new(2006)
 puts car1.year
-Expected output:
+# Expected output:
 
-1994
-I can tow a trailer!
-2006
+# 1994
+# I can tow a trailer!
+# 2006

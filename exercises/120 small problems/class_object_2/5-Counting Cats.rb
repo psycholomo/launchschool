@@ -4,7 +4,13 @@
 class Cat
   @@cat_counter = 0
 
-  initialize
+  def initialize
+    @@cat_counter += 1
+  end
+
+  def Cat.total
+    return @@cat_counter
+  end
 end
 
 
