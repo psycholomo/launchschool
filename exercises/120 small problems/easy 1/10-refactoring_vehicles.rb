@@ -1,54 +1,39 @@
-Consider the following classes:
+#Consider the following classes:
 
-class Car
-  attr_reader :make, :model
-
-  def initialize(make, model)
+class Vehicle
+  attr_reader :make, :model, :wheels
+  def initialize(make, model, wheels)
     @make = make
     @model = model
+    @wheels = wheels
   end
+  def to_s
+    "#{make} #{model}"
+  end
+end
 
-  def wheels
-    4
-  end
+class Car < Vehicle
 
   def to_s
     "#{make} #{model}"
   end
 end
 
-class Motorcycle
-  attr_reader :make, :model
+class Motorcycle < Vehicle
 
-  def initialize(make, model)
-    @make = make
-    @model = model
-  end
-
-  def wheels
-    2
-  end
-
-  def to_s
-    "#{make} #{model}"
-  end
 end
 
-class Truck
-  attr_reader :make, :model, :payload
+class Truck < Vehicle
+  attr_reader :payload
 
-  def initialize(make, model, payload)
-    @make = make
-    @model = model
+  def initialize(make, model, wheels, payload)
+    super(make, model, wheels)
     @payload = payload
   end
 
-  def wheels
-    6
-  end
-
-  def to_s
-    "#{make} #{model}"
-  end
 end
-Refactor these classes so they all use a common superclass, and inherit behavior as needed.
+
+truck = Truck.new("ford","mustang", 6, 400)
+
+puts truck
+#Refactor these classes so they all use a common superclass, and inherit behavior as needed.

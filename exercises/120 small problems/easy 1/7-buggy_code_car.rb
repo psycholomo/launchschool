@@ -1,5 +1,5 @@
-Buggy Code - Car Mileage
-Fix the following code so it works properly:
+# Buggy Code - Car Mileage
+# Fix the following code so it works properly:
 
 class Car
   attr_accessor :mileage
@@ -10,7 +10,7 @@ class Car
 
   def increment_mileage(miles)
     total = mileage + miles
-    mileage = total
+    self.mileage = total
   end
 
   def print_mileage

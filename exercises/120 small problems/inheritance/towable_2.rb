@@ -6,11 +6,17 @@ module Towable
   end
 end
 
-class Truck
+class Vehicle
+  attr_accessor :year
+def initialize(year)
+  @year = year
+end
+end
+class Truck < Vehicle
   include Towable
 end
 
-class Car
+class Car < Vehicle
 end
 
 truck1 = Truck.new(1994)

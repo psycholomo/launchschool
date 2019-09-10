@@ -1,4 +1,4 @@
-Given the following class:
+# Given the following class:
 
 class Rectangle
   def initialize(height, width)
@@ -10,7 +10,14 @@ class Rectangle
     @height * @width
   end
 end
-Write a class called Square that inherits from Rectangle, and is used like this:
+
+class Square < Rectangle
+  def initialize(width)
+    super(width, width)
+  end
+
+  end
+# Write a class called Square that inherits from Rectangle, and is used like this:
 
 square = Square.new(5)
 puts "area of square = #{square.area}"

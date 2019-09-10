@@ -1,4 +1,4 @@
-Using the following code, determine the lookup path used when invoking cat1.color. Only list the classes that were checked by Ruby when searching for the #color method.
+#Using the following code, determine the lookup path used when invoking cat1.color. Only list the classes that were checked by Ruby when searching for the #color method.
 
 class Animal
   attr_reader :color
@@ -16,3 +16,4 @@ end
 
 cat1 = Cat.new('Black')
 cat1.color
+puts Cat.ancestors
