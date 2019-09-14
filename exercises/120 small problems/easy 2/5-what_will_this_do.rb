@@ -1,4 +1,4 @@
-What will the following code print?
+#What will the following code print?
 
 class Something
   def initialize

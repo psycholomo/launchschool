@@ -1,6 +1,7 @@
-Consider the following broken code:
+#Consider the following broken code:
 
 class Wallet
+  attr_reader :amount
   include Comparable
 
   def initialize(amount)

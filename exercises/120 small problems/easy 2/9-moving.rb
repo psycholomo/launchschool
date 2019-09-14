@@ -1,6 +1,13 @@
-You have the following classes.
+#You have the following classes.
 
-class Person
+module Walk
+  def walk 
+   puts  "#{name} #{gait} forward"
+  end
+end
+
+class Person 
+  include Walk
   attr_reader :name
 
   def initialize(name)
@@ -15,6 +22,8 @@ class Person
 end
 
 class Cat
+
+  include Walk
   attr_reader :name
 
   def initialize(name)
@@ -29,6 +38,7 @@ class Cat
 end
 
 class Cheetah
+  include Walk
   attr_reader :name
 
   def initialize(name)
@@ -41,7 +51,7 @@ class Cheetah
     "runs"
   end
 end
-You need to modify the code so that this works:
+#You need to modify the code so that this works:
 
 mike = Person.new("Mike")
 mike.walk
@@ -54,5 +64,5 @@ kitty.walk
 flash = Cheetah.new("Flash")
 flash.walk
 # => "Flash runs forward"
-You are only allowed to write one new method to do this
+#You are only allowed to write one new method to do this
 
