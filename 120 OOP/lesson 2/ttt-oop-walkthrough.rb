@@ -47,6 +47,29 @@ class Player
   end
 end
 
+class Human < Person
+
+  def set_name
+    n = ""
+      loop do
+      puts "What's your name?"
+      n = gets.chomp
+      break unless n.empty?
+      puts "Sorry must enter a value."
+    end
+    self.name = n
+  end
+end
+
+class Computer < Person
+
+  def set_name
+    self.name = ['R2D2', 'Hal', "Chappie", "Sonny", "number 5"].sample
+  end
+
+
+end
+
 class Move
   def initialize
     # seems like we need something to keep track
