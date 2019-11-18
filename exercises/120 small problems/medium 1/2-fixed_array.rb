@@ -1,4 +1,29 @@
-A fixed-length array is an array that always has a fixed number of elements. Write a class that implements a fixed-length array, and provides the necessary methods to support the following code:
+#A fixed-length array is an array that always has a fixed number of elements. Write a class that implements a fixed-length array, and provides the necessary methods to support the following code:
+
+
+class FixedArray
+
+	def initialize(max_size)
+		@array = Array.new(max_size)
+	end
+
+	def [](index)
+		@array.fetch(index)
+	end
+
+	def []=(index,value)
+		self[index]
+		@array[index] = value
+	end
+
+	def to_a
+		@array.clone
+	end
+
+	def to_s
+		to_a.to_s
+	end
+end
 
 fixed_array = FixedArray.new(5)
 puts fixed_array[3] == nil
@@ -44,4 +69,4 @@ begin
 rescue IndexError
   puts true
 end
-The above code should output true 16 times.
+#The above code should output true 16 times.
