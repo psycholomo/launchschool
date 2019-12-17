@@ -27,29 +27,63 @@
 
 # Examples:
 class CircularQueue
-	attr_accessor :arr, :ind
-	def initialize(size)
-		@arr = []
-		@ind = 0
-		size.times do |_|
-			@arr << nil
-		end
-	end
+  def initialize(max_size)
+    @buffer = Array.new
+    @max_size = max_size
+  end
 
-	def enqueue(number)
-	end
+  def enqueue(obj)
+    @buffer.push(obj)
+    dequeue if @buffer.size > @max_size-1 
+  end
 
-	def dequeue
-
-	end
+  def dequeue
+    @buffer.shift
+  end
 end
+
+# arr = []
+# placeholder = 0
+
+
+# def arr_push(num, array)
+#   arr_length = 3
+#   if array.length == arr_length
+    
+#   end
+  
+# end
+
+
+# arr_push(1,arr)
+
+
+# puts arr
+
+# arr.push(1)
+# placeholder = 1
+# arr.push(2)
+# placeholder = 2
+# p arr
+# arr.shift
+# arr.unshift(nil)
+# arr.push(3)
+
+# arr.each_with_index do |num, ind|
+#   if num == nil
+#     arr[ind] = 4
+#     break
+#   end
+# end
+
+# p arr
+
 queue = CircularQueue.new(3)
 puts queue.dequeue == nil
 
 queue.enqueue(1)
 queue.enqueue(2)
 puts queue.dequeue == 1
-
 queue.enqueue(3)
 queue.enqueue(4)
 puts queue.dequeue == 2
